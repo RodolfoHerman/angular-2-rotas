@@ -33,7 +33,7 @@ const APP_ROUTES: Routes = [
         component: HomeComponent,
         canActivate: [AuthGuard]
     },
-    { path: '', redirectTo: '/home', pathMatch: 'full' }
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: '**', component: PaginaNaoEncontradaComponent,
         //canActivate: [AuthGuard]
     }
@@ -41,7 +41,7 @@ const APP_ROUTES: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(APP_ROUTES)],
+    imports: [RouterModule.forRoot(APP_ROUTES, {useHash: true})],
     exports: [RouterModule]
 
 })
